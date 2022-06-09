@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "a50bc475-725f-419e-92a3-fcaca1b7df6d",
+		"name": "Desafio OW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tony Stark\",\r\n    \"email\": \"tonystark@mail.com\",\r\n    \"birthday\": \"2004-01-02\",\r\n    \"opening_balance\": 168.65\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_PROJECT}}/api/users",
+							"host": [
+								"{{URL_PROJECT}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_PROJECT}}/api/users/1",
+							"host": [
+								"{{URL_PROJECT}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_PROJECT}}/api/users",
+							"host": [
+								"{{URL_PROJECT}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current Balance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_PROJECT}}/api/current-balance?user_id=341",
+							"host": [
+								"{{URL_PROJECT}}"
+							],
+							"path": [
+								"api",
+								"current-balance"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "user_id",
+									"value": "341"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fernanda Atualizada\",\r\n    \"birthday\": \"2001-01-14\",\r\n    \"opening_balance\": 800\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_PROJECT}}/api/users/3",
+							"host": [
+								"{{URL_PROJECT}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Fernanda Atualizada\",\r\n    \"birthday\": \"2001-01-14\",\r\n    \"opening_balance\": 800\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_PROJECT}}/api/users/12",
+							"host": [
+								"{{URL_PROJECT}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Create Transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"transaction_reference_id\": 500,\r\n    \"name\": \"Recebimento de frelancer\",\r\n    \"type\": \"chargeback\",\r\n    \"value\": 6895\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_PROJECT}}/api/transactions",
+							"host": [
+								"{{URL_PROJECT}}"
+							],
+							"path": [
+								"api",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_PROJECT}}/api/transactions/1",
+							"host": [
+								"{{URL_PROJECT}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_PROJECT}}/api/users",
+							"host": [
+								"{{URL_PROJECT}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Export Transaction By User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_PROJECT}}/api/export-transactions?user_id=341&filter=last_thirty_days",
+							"host": [
+								"{{URL_PROJECT}}"
+							],
+							"path": [
+								"api",
+								"export-transactions"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "341"
+								},
+								{
+									"key": "date",
+									"value": "06/22",
+									"disabled": true
+								},
+								{
+									"key": "filter",
+									"value": "last_thirty_days"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Transaction",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_PROJECT}}/api/transactions/224",
+							"host": [
+								"{{URL_PROJECT}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"224"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL_PROJECT",
+			"value": "localhost"
+		}
+	]
+}
